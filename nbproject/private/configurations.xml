@@ -399,6 +399,8 @@
           <in>string.h</in>
           <in>vector.h</in>
         </df>
+        <in>ActuatorElement.h</in>
+        <in>IoTManager.h</in>
         <in>active.h</in>
         <in>adc.h</in>
         <in>address_space.h</in>

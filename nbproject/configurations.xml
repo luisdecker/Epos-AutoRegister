@@ -42,9 +42,6 @@
           <in>sht11_test.cc</in>
           <in>temperature_da.cc</in>
         </df>
-        <df name="Data">
-          <in>TestMessage.h</in>
-        </df>
         <df name="emote3">
           <in>emote3_gpio_interrupt_test.cc</in>
           <in>emote3_gprs_http_test.cc</in>
@@ -117,6 +114,7 @@
         <in>id_sender.cc</in>
         <in>led_blink.cc</in>
         <in>producer_consumer.cc</in>
+        <in>radioTeste.cc</in>
         <in>samsung_ac_receiver.cc</in>
         <in>samsung_ac_sender.cc</in>
         <in>send_receive.cc</in>
@@ -173,6 +171,10 @@
             </df>
           </df>
         </df>
+      </df>
+      <df name="include">
+        <in>ActuatorElement.h</in>
+        <in>IoTManager.h</in>
       </df>
       <df name="src">
         <df name="architecture">
@@ -406,7 +408,7 @@
       <makefileType>
         <makeTool>
           <buildCommandWorkingDir>.</buildCommandWorkingDir>
-          <buildCommand>make APPLICATION=radioTeste flash</buildCommand>
+          <buildCommand>${MAKE} -f makefile</buildCommand>
           <cleanCommand>${MAKE} -f makefile clean</cleanCommand>
           <executablePath></executablePath>
         </makeTool>
@@ -488,8 +490,6 @@
       <item path="app/CIPES/sht11_test.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="app/CIPES/temperature_da.cc" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="app/Data/TestMessage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="app/SSB/gateway_ssb.cc" ex="false" tool="1" flavor2="0">
       </item>
@@ -608,6 +608,8 @@
       <item path="app/led_blink.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="app/producer_consumer.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="app/radioTeste.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="app/samsung_ac_receiver.cc" ex="false" tool="1" flavor2="0">
       </item>
@@ -812,6 +814,10 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="include/ActuatorElement.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/IoTManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/architecture/armv7/armv7_crt0.S"
             ex="false"

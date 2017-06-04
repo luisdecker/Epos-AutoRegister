@@ -10,11 +10,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/decker/Documents/SOII/epos_emote/include/tstp.h</file>
-            <file>file:/home/decker/Documents/SOII/epos_emote/include/machine/cortex/transducer.h</file>
-            <file>file:/home/decker/Documents/SOII/epos_emote/include/smart_data.h</file>
-            <file>file:/home/decker/Documents/SOII/epos_emote/src/component/tstp.cc</file>
-            <file>file:/home/decker/Documents/SOII/epos_emote/app/tstp_gateway.cc</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/IoTManager.h</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/utility/ostream.h</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/modbus_ascii.h</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/ActuatorElement.h</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/system/config.h</file>
         </group>
     </open-files>
 </project-private>
