@@ -143,7 +143,7 @@ public:
         for(unsigned int page = first_page; page <= last_page; ++page) {
             bool erase_needed = false;
             Address next_page_boundary = page_to_address(page+1);
-            Address write_end = min(end_address, next_page_boundary);
+            Address write_end = _min(end_address, next_page_boundary);
             unsigned int bytes = (write_end - address);
 
             if(_metadata.write_count[page] >= MAX_WRITE_COUNT)

@@ -9,12 +9,6 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/IoTManager.h</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/utility/ostream.h</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/modbus_ascii.h</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/ActuatorElement.h</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/system/config.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

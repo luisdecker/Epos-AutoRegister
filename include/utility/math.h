@@ -97,13 +97,13 @@ inline float fast_log(float val)
 }
 
 template <typename T>
-const T & min(const T & x, const T & y)
+const T & _min(const T & x, const T & y)
 {
     return (x <= y) ? x : y;
 }
 
 template <typename T>
-const T & max(const T & x, const T & y)
+const T & _max(const T & x, const T & y)
 {
     return (x > y) ? x : y;
 }

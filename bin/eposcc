@@ -6,7 +6,7 @@
 #=========================================================================
 # PATHS
 #=========================================================================
-EPOS=/home/decker/Documents/SOII/epos_emote
+EPOS=/home/decker/Documents/SOII/TrabalhoFinal
 TMP=/tmp
 INC=$EPOS/include
 SRC=$EPOS/src

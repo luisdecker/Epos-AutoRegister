@@ -19,10 +19,7 @@
                 </confElem>
             </confList>
             <formatting>
-                <project-formatting-style>true</project-formatting-style>
-                <c-style>KandR|K&amp;R</c-style>
-                <cpp-style>KandR|K&amp;R</cpp-style>
-                <header-style>KandR|K&amp;R</header-style>
+                <project-formatting-style>false</project-formatting-style>
             </formatting>
         </data>
     </configuration>

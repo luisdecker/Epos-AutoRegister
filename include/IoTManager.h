@@ -19,36 +19,36 @@
 
 __BEGIN_SYS
         namespace IoT {
-typedef Simple_List<IoTElement> IoTList;
-typedef List_Elements::Singly_Linked<IoTElement> ListElement;
+    typedef Simple_List<IoT_Element> IoTList;
+    typedef List_Elements::Singly_Linked<IoT_Element> ListElement;
 
-enum data_type {
-    INTEGER = 1,
-    UNSIGNED_INTEGER = 2,
-    SHORT = 3,
-    UNSIGNED_SHORT = 4,
-    FLOAT = 5,
-    UNSIGNED_FLOAT = 6,
-    DOUBLE = 7,
-    CHAR = 8,
-    UNSIGNED_CHAR = 9
-};
-
-class IoTManager {
-private:
-    //List of avaible IoT Elements (functions and sensoring)
-    IoTList elements;
-public:
-
-    IoTManager()
+    enum data_type
     {
-    }
+        INTEGER = 1,
+        UNSIGNED_INTEGER = 2,
+        SHORT = 3,
+        UNSIGNED_SHORT = 4,
+        FLOAT = 5,
+        UNSIGNED_FLOAT = 6,
+        DOUBLE = 7,
+        CHAR = 8,
+        UNSIGNED_CHAR = 9
+    };
 
-    void addElement(IoTElement & newElement);
-    void removeElement(IoTElement & removalElement);
+    class IoT_Manager
+    {
+    private:
+        //List of avaible IoT Elements (functions and sensoring)
+        IoTList _elements;
+    public:
+
+        IoT_Manager () { }
+
+        void addElement (IoT_Element & newElement);
+        void removeElement (IoT_Element & removalElement);
 
 
-};
+    };
 };
 __END_SYS
 #endif /* IOTMANAGER_H */
@@ -67,18 +67,17 @@ __END_SYS
 __BEGIN_SYS
         namespace IoT {
 
-class IoTElement {
-public:
-
-    IoTElement(data_type data_t, char * description) :
-    data_t(data_t), description(description)
+    class IoT_Element
     {
-    }
+    public:
 
-protected:
-    data_type data_t; //Datatype of the element
-    char * description; //Element description (to be sent to IoT server)
-};
+        IoT_Element (data_type data_t, char * description) :
+        _data_type (data_t), _description (description) { }
+
+    protected:
+        data_type _data_type; //Datatype of the element
+        char * _description; //Element description (to be sent to IoT server)
+    };
 }
 __END_SYS
 #endif//IOTELEMENT_H
@@ -96,27 +95,28 @@ __END_SYS
 __BEGIN_SYS
         namespace IoT {
 
-template<class type>
-class ActuatorElement : public IoTElement {
-public:
-
-    ActuatorElement(data_type data_t, char* description, void (*actuate)(type), type range_minimum, type range_maximum) :
-    IoTElement(data_t, description), range_maximum(range_minimum), range_maximum(range_maximum)
+    template<class type>
+    class IoT_Actuator_Element : private IoT_Element
     {
-        this->actuate = actuate;
-    }
+        friend class IoT_Manager;
+    public:
 
-private:
-    void actuate(type); //The actuate function
+        IoT_Actuator_Element (data_type data_t, char* description, void (*actuate)(type), type range_minimum, type range_maximum) :
+        IoT_Element (data_t, description), _range_maximum (range_minimum), _range_maximum (range_maximum) {
+            this->_actuate = actuate;
+        }
 
-    type range_minimum = min;
-    type range_maximum = max;
+    private:
+        void _actuate (type); //The actuate function
+
+        type _range_minimum;
+        type _range_maximum;
 
 
 
 
 
-};
+    };
 };
 __END_SYS
 #endif /* ACTUATORELEMENT_H */

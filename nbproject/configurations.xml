@@ -98,6 +98,7 @@
           <in>ultrasonic_distance_meter.cc</in>
           <in>ultrasonic_logger.cc</in>
         </df>
+        <in>IoT_Test.cc</in>
         <in>USB.cc</in>
         <in>adc_test.cc</in>
         <in>concurrent_philosophers_dinner.cc</in>
@@ -121,6 +122,7 @@
         <in>sensor_os2.cc</in>
         <in>smart_door.cc</in>
         <in>smart_plug.cc</in>
+        <in>testeID.cc</in>
         <in>tst_sink.cc</in>
         <in>tstp_gateway.cc</in>
         <in>tstp_mac_test.cc</in>
@@ -491,6 +493,8 @@
       </item>
       <item path="app/CIPES/temperature_da.cc" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="app/IoT_Test.cc" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="app/SSB/gateway_ssb.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="app/SSB/lux_sensor.cc" ex="false" tool="1" flavor2="0">
@@ -636,6 +640,8 @@
       <item path="app/smart_room/outlet_b0.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="app/smart_room/outlet_b1.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="app/testeID.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="app/tst_sink.cc" ex="false" tool="1" flavor2="0">
       </item>
