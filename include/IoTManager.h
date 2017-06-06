@@ -5,22 +5,21 @@
  * Created on June 3, 2017, 6:59 PM
  */
 
-/*
- * This is a IoT metadata manager.
- * It is responsible of the creation of a IoThing descriptor that will be used 
- * to the registration of a IoThing in a IoT network. 
- * */
+
 #ifndef IOTMANAGER_H
 #define IOTMANAGER_H
 
 #include "system/config.h"
 #include "utility/list.h"
-
-
+/*
+ * This is a IoT metadata manager.
+ * It is responsible of the creation of a IoThing descriptor that will be used 
+ * to the registration of a IoThing in a IoT network. 
+ * */
 __BEGIN_SYS
         namespace IoT {
-    typedef Simple_List<IoT_Element> IoTList;
-    typedef List_Elements::Singly_Linked<IoT_Element> ListElement;
+    typedef Simple_List<IoT_Service> IoTList;
+    typedef List_Elements::Singly_Linked<IoT_Service> ListElement;
 
     enum data_type
     {
@@ -30,9 +29,8 @@ __BEGIN_SYS
         UNSIGNED_SHORT = 4,
         FLOAT = 5,
         UNSIGNED_FLOAT = 6,
-        DOUBLE = 7,
-        CHAR = 8,
-        UNSIGNED_CHAR = 9
+        UNSIGNED_CHAR = 7,
+        CHAR = 8
     };
 
     class IoT_Manager
@@ -44,8 +42,8 @@ __BEGIN_SYS
 
         IoT_Manager () { }
 
-        void addElement (IoT_Element & newElement);
-        void removeElement (IoT_Element & removalElement);
+        void addElement (IoT_Service & newElement);
+        void removeElement (IoT_Service & removalElement);
 
 
     };
@@ -54,70 +52,54 @@ __END_SYS
 #endif /* IOTMANAGER_H */
 
 //==============================================================================
+
+
+#ifndef IOTSERVICE_H
+#define IOTSERVICE_H
 /*
- * This is a IOT element.
- * It has a description, that gonna be sent to the sink in the registration process.
- * It has a Unit, that is the sender or accepted parameter type (int, double, bool...)
- * 
+ * This is a IOT Service.
+ * A service is a action made by the smart object. This action can be:
+ *      Sensoring -> Display a data obtained from the smart object
+ *      Acting -> Read the parameters and actuate 
+ * A service has parameters, and this parameters are considered in the service
+ * execution.
  */
-
-#ifndef IOTELEMENT_H
-#define IOTELEMENT_H
-
 __BEGIN_SYS
         namespace IoT {
 
-    class IoT_Element
+    class IoT_Service
     {
     public:
 
-        IoT_Element (data_type data_t, char * description) :
-        _data_type (data_t), _description (description) { }
+        IoT_Service () { }
 
     protected:
-        data_type _data_type; //Datatype of the element
+
         char * _description; //Element description (to be sent to IoT server)
     };
 }
+
 __END_SYS
-#endif//IOTELEMENT_H
+#endif//IOTSERVICE_H
 //==============================================================================
-
+#ifndef IOTPARAMETER_H
+#define IOTPARAMETER_H
 /*
- * This is a Actuator IoT element. 
- * A Actuator is a function of the IoT object.
- * It has a Parameter Range, that is the range of accepted parameters ([1,10], [true,false], [0.5,1.5] ...)
- * It has a actuation method, a void method with a single parameter (Multiple parameters = Multiple A.E.)
+ * This is a IoT Parameter. 
+ * A Parameter is a configuration information used in a IoT_Service.
  */
-#ifndef ACTUATORELEMENT_H
-#define ACTUATORELEMENT_H
-
 __BEGIN_SYS
         namespace IoT {
 
-    template<class type>
-    class IoT_Actuator_Element : private IoT_Element
+    class IoT_Parameter
     {
-        friend class IoT_Manager;
-    public:
-
-        IoT_Actuator_Element (data_type data_t, char* description, void (*actuate)(type), type range_minimum, type range_maximum) :
-        IoT_Element (data_t, description), _range_maximum (range_minimum), _range_maximum (range_maximum) {
-            this->_actuate = actuate;
-        }
-
     private:
-        void _actuate (type); //The actuate function
-
-        type _range_minimum;
-        type _range_maximum;
-
-
-
-
-
+        unsigned char _id;
+        char* _nome;
+        data_type _data_type
     };
 };
 __END_SYS
-#endif /* ACTUATORELEMENT_H */
+#endif //IOTPARAMETER_H
+
 //==============================================================================

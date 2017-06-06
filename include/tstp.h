@@ -1286,7 +1286,7 @@ public:
 
             unsigned char nonce[16];
             memset(nonce, 0, 16);
-            memcpy(nonce, &t, _min(sizeof(Time), 16lu));
+            memcpy(nonce, &t, min(sizeof(Time), 16lu));
 
             OTP out;
             Poly1305(id, ms).stamp(out, nonce, mi, MI_SIZE);
@@ -1313,19 +1313,19 @@ public:
             Poly1305 poly(id, ms);
 
             memset(nonce, 0, 16);
-            memcpy(nonce, &t, _min(sizeof(Time), 16lu));
+            memcpy(nonce, &t, min(sizeof(Time), 16lu));
             if(poly.verify(otp, nonce, mi, MI_SIZE))
                 return true;
 
             t--;
             memset(nonce, 0, 16);
-            memcpy(nonce, &t, _min(sizeof(Time), 16lu));
+            memcpy(nonce, &t, min(sizeof(Time), 16lu));
             if(poly.verify(otp, nonce, mi, MI_SIZE))
                 return true;
 
             t += 2;
             memset(nonce, 0, 16);
-            memcpy(nonce, &t, _min(sizeof(Time), 16lu));
+            memcpy(nonce, &t, min(sizeof(Time), 16lu));
             if(poly.verify(otp, nonce, mi, MI_SIZE))
                 return true;
 
@@ -1502,17 +1502,17 @@ private:
                     case DH_RESPONSE:
                     case AUTH_REQUEST: {
                         Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + _min(static_cast<unsigned long long>(Security::KEY_MANAGER_PERIOD), Security::KEY_EXPIRY) / 2;
+                        Time deadline = origin + min(static_cast<unsigned long long>(Security::KEY_MANAGER_PERIOD), Security::KEY_EXPIRY) / 2;
                         return Region(sink(), 0, origin, deadline);
                     }
                     case DH_REQUEST: {
                         Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + _min(static_cast<unsigned long long>(Security::KEY_MANAGER_PERIOD), Security::KEY_EXPIRY) / 2;
+                        Time deadline = origin + min(static_cast<unsigned long long>(Security::KEY_MANAGER_PERIOD), Security::KEY_EXPIRY) / 2;
                         return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                     case AUTH_GRANTED: {
                         Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + _min(static_cast<unsigned long long>(Security::KEY_MANAGER_PERIOD), Security::KEY_EXPIRY) / 2;
+                        Time deadline = origin + min(static_cast<unsigned long long>(Security::KEY_MANAGER_PERIOD), Security::KEY_EXPIRY) / 2;
                         return Region(buf->frame()->data<Auth_Granted>()->destination().center, buf->frame()->data<Auth_Granted>()->destination().radius, origin, deadline);
                     }
                     case REPORT: {

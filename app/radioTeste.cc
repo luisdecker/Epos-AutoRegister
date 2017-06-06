@@ -87,12 +87,10 @@ int main() {
 
     while (1) {
         for (unsigned int i = 0; i < 8; i++)
-            cout << "." << hex << Machine::id()[i] << '.';
+            cout << " " << hex << Machine::id()[i];
         cout << endl;
         Alarm::delay(1000000);
     }
 
     return 0;
 }
-//0 4b 12 0 a b0 d 6
-//
