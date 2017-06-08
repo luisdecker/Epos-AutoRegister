@@ -67,6 +67,10 @@ __END_SYS
 __BEGIN_SYS
         namespace IoT {
 
+
+    typedef List_Elements::Singly_Linked<IoT_Service*> ListElement;
+    typedef Simple_List<ListElement> IoTList;
+
     class IoT_Service
     {
     public:
@@ -96,7 +100,7 @@ __BEGIN_SYS
     private:
         unsigned char _id;
         char* _nome;
-        data_type _data_type
+        data_type _data_type;
     };
 };
 __END_SYS
