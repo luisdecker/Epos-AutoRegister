@@ -12,9 +12,9 @@ class List_Element_Rank
 {
 public:
 
-    List_Element_Rank (int r = 0) : _rank (r) { }
+    List_Element_Rank ( int r = 0 ) : _rank ( r ) { }
 
-    operator int() const {
+    operator int( ) const {
         return _rank;
     }
 
@@ -38,10 +38,10 @@ namespace List_Elements {
 
     public:
 
-        Pointer (const T * o) : _object (o) { }
+        Pointer ( const T * o ) : _object ( o ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
     private:
@@ -60,30 +60,30 @@ namespace List_Elements {
 
     public:
 
-        Ranked (const T * o, const R & r = 0) : _object (o), _rank (r) { }
+        Ranked ( const T * o, const R & r = 0 ) : _object ( o ), _rank ( r ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        const R & rank () const {
+        const R & rank ( ) const {
             return _rank;
         }
 
-        const R & key () const {
+        const R & key ( ) const {
             return _rank;
         }
 
-        void rank (const R & r) {
+        void rank ( const R & r ) {
             _rank = r;
         }
 
-        int promote (const R & n = 1) {
+        int promote ( const R & n = 1 ) {
             _rank -= n;
             return _rank;
         }
 
-        int demote (const R & n = 1) {
+        int demote ( const R & n = 1 ) {
             _rank += n;
             return _rank;
         }
@@ -104,17 +104,17 @@ namespace List_Elements {
 
     public:
 
-        Singly_Linked (const T * o) : _object (o), _next (0) { }
+        Singly_Linked ( const T * o ) : _object ( o ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
@@ -136,38 +136,38 @@ namespace List_Elements {
 
     public:
 
-        Singly_Linked_Ordered (const T * o, const R & r = 0) : _object (o), _rank (r), _next (0) { }
+        Singly_Linked_Ordered ( const T * o, const R & r = 0 ) : _object ( o ), _rank ( r ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
-        const R & rank () const {
+        const R & rank ( ) const {
             return _rank;
         }
 
-        const R & key () const {
+        const R & key ( ) const {
             return _rank;
         }
 
-        void rank (const R & r) {
+        void rank ( const R & r ) {
             _rank = r;
         }
 
-        int promote (const R & n = 1) {
+        int promote ( const R & n = 1 ) {
             _rank -= n;
             return _rank;
         }
 
-        int demote (const R & n = 1) {
+        int demote ( const R & n = 1 ) {
             _rank += n;
             return _rank;
         }
@@ -189,33 +189,33 @@ namespace List_Elements {
 
     public:
 
-        Singly_Linked_Grouping (const T * o, int s) : _object (o), _size (s), _next (0) { }
+        Singly_Linked_Grouping ( const T * o, int s ) : _object ( o ), _size ( s ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
-        unsigned int size () const {
+        unsigned int size ( ) const {
             return _size;
         }
 
-        void size (unsigned int l) {
+        void size ( unsigned int l ) {
             _size = l;
         }
 
-        void shrink (unsigned int n) {
+        void shrink ( unsigned int n ) {
             _size -= n;
         }
 
-        void expand (unsigned int n) {
+        void expand ( unsigned int n ) {
             _size += n;
         }
 
@@ -236,25 +236,25 @@ namespace List_Elements {
 
     public:
 
-        Doubly_Linked (const T * o) : _object (o), _prev (0), _next (0) { }
+        Doubly_Linked ( const T * o ) : _object ( o ), _prev ( 0 ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * prev () const {
+        Element * prev ( ) const {
             return _prev;
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void prev (Element * e) {
+        void prev ( Element * e ) {
             _prev = e;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
@@ -276,42 +276,42 @@ namespace List_Elements {
 
     public:
 
-        Doubly_Linked_Ordered (const T * o, const R & r = 0) : _object (o), _rank (r), _prev (0), _next (0) { }
+        Doubly_Linked_Ordered ( const T * o, const R & r = 0 ) : _object ( o ), _rank ( r ), _prev ( 0 ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * prev () const {
+        Element * prev ( ) const {
             return _prev;
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void prev (Element * e) {
+        void prev ( Element * e ) {
             _prev = e;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
-        const R & rank () const {
+        const R & rank ( ) const {
             return _rank;
         }
 
-        void rank (const R & r) {
+        void rank ( const R & r ) {
             _rank = r;
         }
 
-        int promote (const R & n = 1) {
+        int promote ( const R & n = 1 ) {
             _rank -= n;
             return _rank;
         }
 
-        int demote (const R & n = 1) {
+        int demote ( const R & n = 1 ) {
             _rank += n;
             return _rank;
         }
@@ -335,42 +335,42 @@ namespace List_Elements {
 
     public:
 
-        Doubly_Linked_Scheduling (const T * o, const R & r = 0) : _object (o), _rank (r), _prev (0), _next (0) { }
+        Doubly_Linked_Scheduling ( const T * o, const R & r = 0 ) : _object ( o ), _rank ( r ), _prev ( 0 ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * prev () const {
+        Element * prev ( ) const {
             return _prev;
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void prev (Element * e) {
+        void prev ( Element * e ) {
             _prev = e;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
-        const R & rank () const {
+        const R & rank ( ) const {
             return _rank;
         }
 
-        void rank (const R & r) {
+        void rank ( const R & r ) {
             _rank = r;
         }
 
-        int promote (const R & n = 1) {
+        int promote ( const R & n = 1 ) {
             _rank -= n;
             return _rank;
         }
 
-        int demote (const R & n = 1) {
+        int demote ( const R & n = 1 ) {
             _rank += n;
             return _rank;
         }
@@ -394,41 +394,41 @@ namespace List_Elements {
 
     public:
 
-        Doubly_Linked_Grouping (const T * o, int s) : _object (o), _size (s), _prev (0), _next (0) { }
+        Doubly_Linked_Grouping ( const T * o, int s ) : _object ( o ), _size ( s ), _prev ( 0 ), _next ( 0 ) { }
 
-        T * object () const {
-            return const_cast<T *> (_object);
+        T * object ( ) const {
+            return const_cast < T * > ( _object );
         }
 
-        Element * prev () const {
+        Element * prev ( ) const {
             return _prev;
         }
 
-        Element * next () const {
+        Element * next ( ) const {
             return _next;
         }
 
-        void prev (Element * e) {
+        void prev ( Element * e ) {
             _prev = e;
         }
 
-        void next (Element * e) {
+        void next ( Element * e ) {
             _next = e;
         }
 
-        unsigned int size () const {
+        unsigned int size ( ) const {
             return _size;
         }
 
-        void size (unsigned int l) {
+        void size ( unsigned int l ) {
             _size = l;
         }
 
-        void shrink (unsigned int n) {
+        void shrink ( unsigned int n ) {
             _size -= n;
         }
 
-        void expand (unsigned int n) {
+        void expand ( unsigned int n ) {
             _size += n;
         }
 
@@ -456,38 +456,38 @@ namespace List_Iterators {
 
     public:
 
-        Forward () : _current (0) { }
+        Forward ( ) : _current ( 0 ) { }
 
-        Forward (Element * e) : _current (e) { }
+        Forward ( Element * e ) : _current ( e ) { }
 
-        operator Element *() const {
+        operator Element *( ) const {
             return _current;
         }
 
-        Element & operator* () const {
+        Element & operator* ( ) const {
             return *_current;
         }
 
-        Element * operator-> () const {
+        Element * operator-> ( ) const {
             return _current;
         }
 
-        Iterator & operator++ () {
-            _current = _current->next ();
+        Iterator & operator++ ( ) {
+            _current = _current->next ( );
             return *this;
         }
 
-        Iterator operator++ (int) {
+        Iterator operator++ ( int ) {
             Iterator tmp = *this;
             ++ * this;
             return tmp;
         }
 
-        bool operator== (const Iterator & i) const {
+        bool operator== ( const Iterator & i ) const {
             return _current == i._current;
         }
 
-        bool operator!= (const Iterator & i) const {
+        bool operator!= ( const Iterator & i ) const {
             return _current != i._current;
         }
 
@@ -508,49 +508,49 @@ namespace List_Iterators {
 
     public:
 
-        Bidirecional () : _current (0) { }
+        Bidirecional ( ) : _current ( 0 ) { }
 
-        Bidirecional (Element * e) : _current (e) { }
+        Bidirecional ( Element * e ) : _current ( e ) { }
 
-        operator Element *() const {
+        operator Element *( ) const {
             return _current;
         }
 
-        Element & operator* () const {
+        Element & operator* ( ) const {
             return *_current;
         }
 
-        Element * operator-> () const {
+        Element * operator-> ( ) const {
             return _current;
         }
 
-        Iterator & operator++ () {
-            _current = _current->next ();
+        Iterator & operator++ ( ) {
+            _current = _current->next ( );
             return *this;
         }
 
-        Iterator operator++ (int) {
+        Iterator operator++ ( int ) {
             Iterator tmp = *this;
             ++ * this;
             return tmp;
         }
 
-        Iterator & operator-- () {
-            _current = _current->prev ();
+        Iterator & operator-- ( ) {
+            _current = _current->prev ( );
             return *this;
         }
 
-        Iterator operator-- (int) {
+        Iterator operator-- ( int ) {
             Iterator tmp = *this;
             -- * this;
             return tmp;
         }
 
-        bool operator== (const Iterator & i) const {
+        bool operator== ( const Iterator & i ) const {
             return _current == i._current;
         }
 
-        bool operator!= (const Iterator & i) const {
+        bool operator!= ( const Iterator & i ) const {
             return _current != i._current;
         }
 
@@ -571,129 +571,129 @@ public:
 
 public:
 
-    Simple_List () : _size (0), _head (0), _tail (0) { }
+    Simple_List ( ) : _size ( 0 ), _head ( 0 ), _tail ( 0 ) { }
 
-    bool empty () const {
-        return (_size == 0);
+    bool empty ( ) const {
+        return (_size == 0 );
     }
 
-    unsigned int size () const {
+    unsigned int size ( ) const {
         return _size;
     }
 
-    Element * head () {
+    Element * head ( ) {
         return _head;
     }
 
-    Element * tail () {
+    Element * tail ( ) {
         return _tail;
     }
 
-    Iterator begin () {
-        return Iterator (_head);
+    Iterator begin ( ) {
+        return Iterator ( _head );
     }
 
-    Iterator end () {
-        return Iterator (0);
+    Iterator end ( ) {
+        return Iterator ( 0 );
     }
 
-    void insert (Element * e) {
-        insert_tail (e);
+    void insert ( Element * e ) {
+        insert_tail ( e );
     }
 
-    void insert_head (Element * e) {
-        if (empty ())
-            insert_first (e);
+    void insert_head ( Element * e ) {
+        if ( empty ( ) )
+            insert_first ( e );
         else {
-            e->next (_head);
+            e->next ( _head );
             _head = e;
             _size++;
         }
     }
 
-    void insert_tail (Element * e) {
-        if (empty ())
-            insert_first (e);
+    void insert_tail ( Element * e ) {
+        if ( empty ( ) )
+            insert_first ( e );
         else {
-            _tail->next (e);
-            e->next (0);
+            _tail->next ( e );
+            e->next ( 0 );
             _tail = e;
             _size++;
         }
     }
 
-    Element * remove () {
-        return remove_head ();
+    Element * remove ( ) {
+        return remove_head ( );
     }
 
-    Element * remove (Element * e) {
-        if (last ())
-            remove_last ();
-        else if (e == _head)
-            remove_head ();
+    Element * remove ( Element * e ) {
+        if ( last ( ) )
+            remove_last ( );
+        else if ( e == _head )
+            remove_head ( );
         else {
             Element * p = _head;
-            for (; p && p->next () && (p->next () != e); p = p->next ());
-            if (p)
-                p->next (e->next ());
-            if (e == _tail)
+            for (; p && p->next ( ) && ( p->next ( ) != e ); p = p->next ( ) );
+            if ( p )
+                p->next ( e->next ( ) );
+            if ( e == _tail )
                 _tail = p;
             _size--;
         }
         return e;
     }
 
-    Element * remove_head () {
-        if (empty ())
+    Element * remove_head ( ) {
+        if ( empty ( ) )
             return 0;
-        if (last ())
-            return remove_last ();
+        if ( last ( ) )
+            return remove_last ( );
         Element * e = _head;
-        _head = _head->next ();
+        _head = _head->next ( );
         _size--;
         return e;
     }
 
-    Element * remove_tail () {
-        if (_tail)
-            return remove (_tail);
+    Element * remove_tail ( ) {
+        if ( _tail )
+            return remove ( _tail );
         else
             return 0;
     }
 
-    Element * remove (const Object_Type * obj) {
-        Element * e = search (obj);
-        if (e)
-            return remove (e);
+    Element * remove ( const Object_Type * obj ) {
+        Element * e = search ( obj );
+        if ( e )
+            return remove ( e );
         return 0;
     }
 
-    Element * search (const Object_Type * obj) {
+    Element * search ( const Object_Type * obj ) {
         Element * e = _head;
-        for (; e && (e->object () != obj); e = e->next ());
+        for (; e && ( e->object ( ) != obj ); e = e->next ( ) );
         return e;
     }
 
 protected:
 
-    bool last () const {
-        return (_size == 1);
+    bool last ( ) const {
+        return (_size == 1 );
     }
 
-    void insert (Element * e, Element * p, Element * n) {
-        p->next (e);
-        e->next (n);
+    void insert ( Element * e, Element * p, Element * n ) {
+        p->next ( e );
+        e->next ( n );
         _size++;
     }
 
-    void insert_first (Element * e) {
-        e->next (0);
+    void insert_first ( Element * e ) {
+        e->next ( 0 );
         _head = e;
         _tail = e;
         _size++;
     }
 
-    Element * remove_last () {
+    Element * remove_last ( ) {
         Element * e = _head;
         _head = 0;
         _tail = 0;
@@ -736,63 +736,63 @@ public:
     using Base::remove_tail;
     using Base::search;
 
-    void insert (Element * e) {
-        if (empty ())
-            insert_first (e);
+    void insert ( Element * e ) {
+        if ( empty ( ) )
+            insert_first ( e );
         else {
             Element * next, * prev;
-            for (next = head (), prev = 0;
-                    (next->rank () <= e->rank ()) && next->next ();
-                    prev = next, next = next->next ())
-                if (relative)
-                    e->rank (e->rank () - next->rank ());
-            if (next->rank () <= e->rank ()) {
-                if (relative)
-                    e->rank (e->rank () - next->rank ());
-                insert_tail (e);
-            } else if (!prev) {
-                if (relative)
-                    next->rank (next->rank () - e->rank ());
-                insert_head (e);
+            for ( next = head ( ), prev = 0;
+                    ( next->rank ( ) <= e->rank ( ) ) && next->next ( );
+                    prev = next, next = next->next ( ) )
+                if ( relative )
+                    e->rank ( e->rank ( ) - next->rank ( ) );
+            if ( next->rank ( ) <= e->rank ( ) ) {
+                if ( relative )
+                    e->rank ( e->rank ( ) - next->rank ( ) );
+                insert_tail ( e );
+            } else if ( !prev ) {
+                if ( relative )
+                    next->rank ( next->rank ( ) - e->rank ( ) );
+                insert_head ( e );
             } else {
-                if (relative)
-                    next->rank (next->rank () - e->rank ());
-                Base::insert (e, prev, next);
+                if ( relative )
+                    next->rank ( next->rank ( ) - e->rank ( ) );
+                Base::insert ( e, prev, next );
             }
         }
     }
 
-    Element * remove () {
-        Element * e = remove_head ();
-        if (e && relative && e->next ())
-            e->next ()->rank (e->next ()->rank () + e->rank ());
+    Element * remove ( ) {
+        Element * e = remove_head ( );
+        if ( e && relative && e->next ( ) )
+            e->next ( )->rank ( e->next ( )->rank ( ) + e->rank ( ) );
         return e;
     }
 
-    Element * remove (Element * e) {
-        Base::remove (e);
-        if (relative && e->next ())
-            e->next ()->rank (e->next ()->rank () + e->rank ());
+    Element * remove ( Element * e ) {
+        Base::remove ( e );
+        if ( relative && e->next ( ) )
+            e->next ( )->rank ( e->next ( )->rank ( ) + e->rank ( ) );
         return e;
     }
 
-    Element * remove (const Object_Type * obj) {
-        Element * e = search (obj);
-        if (e)
-            return remove (e);
+    Element * remove ( const Object_Type * obj ) {
+        Element * e = search ( obj );
+        if ( e )
+            return remove ( e );
         return 0;
     }
 
-    Element * search_rank (const Rank_Type & rank) {
-        Element * e = head ();
-        for (; e && (e->rank () != rank); e = e->next ());
+    Element * search_rank ( const Rank_Type & rank ) {
+        Element * e = head ( );
+        for (; e && ( e->rank ( ) != rank ); e = e->next ( ) );
         return e;
     }
 
-    Element * remove_rank (const Rank_Type & rank) {
-        Element * e = search_rank (rank);
-        if (e)
-            return remove (e);
+    Element * remove_rank ( const Rank_Type & rank ) {
+        Element * e = search_rank ( rank );
+        if ( e )
+            return remove ( e );
         return 0;
     }
 };
@@ -824,7 +824,7 @@ public:
 
 public:
 
-    Simple_Grouping_List () : _grouped_size (0) { }
+    Simple_Grouping_List ( ) : _grouped_size ( 0 ) { }
 
     using Base::empty;
     using Base::size;
@@ -833,52 +833,52 @@ public:
     using Base::begin;
     using Base::end;
 
-    unsigned int grouped_size () const {
+    unsigned int grouped_size ( ) const {
         return _grouped_size;
     }
 
-    Element * search_size (unsigned int s) {
-        Element * e = head ();
-        if (sizeof (Object_Type) < sizeof (Element))
-            for (; e && (e->size () < sizeof (Element) / sizeof (Object_Type) + s) && (e->size () != s); e = e->next ());
+    Element * search_size ( unsigned int s ) {
+        Element * e = head ( );
+        if ( sizeof (Object_Type ) < sizeof (Element ) )
+            for (; e && ( e->size ( ) < sizeof (Element ) / sizeof (Object_Type ) + s ) && ( e->size ( ) != s ); e = e->next ( ) );
         else
-            for (; e && (e->size () < s); e = e->next ());
+            for (; e && ( e->size ( ) < s ); e = e->next ( ) );
         return e;
     }
 
-    void insert_merging (Element * e, Element ** m1, Element ** m2) {
-        _grouped_size += e->size ();
+    void insert_merging ( Element * e, Element ** m1, Element ** m2 ) {
+        _grouped_size += e->size ( );
         *m1 = *m2 = 0;
-        Element * r = search (e->object () + e->size ());
-        Element * l = search_left (e->object ());
-        if (r) {
-            e->size (e->size () + r->size ());
-            remove (r);
+        Element * r = search ( e->object ( ) + e->size ( ) );
+        Element * l = search_left ( e->object ( ) );
+        if ( r ) {
+            e->size ( e->size ( ) + r->size ( ) );
+            remove ( r );
             *m1 = r;
         }
-        if (l) {
-            l->size (l->size () + e->size ());
+        if ( l ) {
+            l->size ( l->size ( ) + e->size ( ) );
             *m2 = e;
         } else
-            insert_tail (e);
+            insert_tail ( e );
     }
 
-    Element * search_decrementing (unsigned int s) {
-        Element * e = search_size (s);
-        if (e) {
-            e->shrink (s);
+    Element * search_decrementing ( unsigned int s ) {
+        Element * e = search_size ( s );
+        if ( e ) {
+            e->shrink ( s );
             _grouped_size -= s;
-            if (!e->size ())
-                remove (e);
+            if ( !e->size ( ) )
+                remove ( e );
         }
         return e;
     }
 
 private:
 
-    Element * search_left (const Object_Type * obj) {
-        Element * e = head ();
-        for (; e && (e->object () + e->size () != obj); e = e->next ());
+    Element * search_left ( const Object_Type * obj ) {
+        Element * e = head ( );
+        for (; e && ( e->object ( ) + e->size ( ) != obj ); e = e->next ( ) );
         return e;
     }
 
@@ -900,253 +900,253 @@ public:
 
 public:
 
-    List () : _size (0), _head (0), _tail (0) { }
+    List ( ) : _size ( 0 ), _head ( 0 ), _tail ( 0 ) { }
 
-    bool empty () const {
-        return (_size == 0);
+    bool empty ( ) const {
+        return (_size == 0 );
     }
 
-    unsigned int size () const {
+    unsigned int size ( ) const {
         return _size;
     }
 
-    Element * head () {
+    Element * head ( ) {
         return _head;
     }
 
-    Element * tail () {
+    Element * tail ( ) {
         return _tail;
     }
 
-    Iterator begin () {
-        return Iterator (_head);
+    Iterator begin ( ) {
+        return Iterator ( _head );
     }
 
-    Iterator end () {
-        return Iterator (0);
+    Iterator end ( ) {
+        return Iterator ( 0 );
     }
 
-    void insert (Element * e) {
-        insert_tail (e);
+    void insert ( Element * e ) {
+        insert_tail ( e );
     }
 
-    void insert_head (Element * e) {
-        db<Lists>(TRC) << "List::insert_head(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    void insert_head ( Element * e ) {
+        db<Lists>( TRC ) << "List::insert_head(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        if (empty ())
-            insert_first (e);
+        if ( empty ( ) )
+            insert_first ( e );
         else {
-            e->prev (0);
-            e->next (_head);
-            _head->prev (e);
+            e->prev ( 0 );
+            e->next ( _head );
+            _head->prev ( e );
             _head = e;
             _size++;
         }
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
     }
 
-    void insert_tail (Element * e) {
-        db<Lists>(TRC) << "List::insert_tail(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    void insert_tail ( Element * e ) {
+        db<Lists>( TRC ) << "List::insert_tail(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        if (empty ())
-            insert_first (e);
+        if ( empty ( ) )
+            insert_first ( e );
         else {
-            _tail->next (e);
-            e->prev (_tail);
-            e->next (0);
+            _tail->next ( e );
+            e->prev ( _tail );
+            e->next ( 0 );
             _tail = e;
             _size++;
         }
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
     }
 
-    Element * remove () {
-        return remove_head ();
+    Element * remove ( ) {
+        return remove_head ( );
     }
 
-    Element * remove (Element * e) {
-        db<Lists>(TRC) << "List::remove(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    Element * remove ( Element * e ) {
+        db<Lists>( TRC ) << "List::remove(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        if (last ())
-            remove_last ();
-        else if (!e->prev ())
-            remove_head ();
-        else if (!e->next ())
-            remove_tail ();
+        if ( last ( ) )
+            remove_last ( );
+        else if ( !e->prev ( ) )
+            remove_head ( );
+        else if ( !e->next ( ) )
+            remove_tail ( );
         else {
-            e->prev ()->next (e->next ());
-            e->next ()->prev (e->prev ());
+            e->prev ( )->next ( e->next ( ) );
+            e->next ( )->prev ( e->prev ( ) );
             _size--;
         }
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
         return e;
     }
 
-    Element * remove_head () {
-        db<Lists>(TRC) << "List::remove_head()" << endl;
+    Element * remove_head ( ) {
+        db<Lists>( TRC ) << "List::remove_head()" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        if (empty ())
+        if ( empty ( ) )
             return 0;
-        if (last ())
-            return remove_last ();
+        if ( last ( ) )
+            return remove_last ( );
         Element * e = _head;
-        _head = _head->next ();
-        _head->prev (0);
+        _head = _head->next ( );
+        _head->prev ( 0 );
         _size--;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
         return e;
     }
 
-    Element * remove_tail () {
-        db<Lists>(TRC) << "List::remove_tail()" << endl;
+    Element * remove_tail ( ) {
+        db<Lists>( TRC ) << "List::remove_tail()" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        if (empty ())
+        if ( empty ( ) )
             return 0;
-        if (last ())
-            return remove_last ();
+        if ( last ( ) )
+            return remove_last ( );
         Element * e = _tail;
-        _tail = _tail->prev ();
-        _tail->next (0);
+        _tail = _tail->prev ( );
+        _tail->next ( 0 );
         _size--;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
         return e;
     }
 
-    Element * remove (const Object_Type * obj) {
-        Element * e = search (obj);
-        if (e)
-            return remove (e);
+    Element * remove ( const Object_Type * obj ) {
+        Element * e = search ( obj );
+        if ( e )
+            return remove ( e );
         return 0;
     }
 
-    Element * search (const Object_Type * obj) {
+    Element * search ( const Object_Type * obj ) {
         Element * e = _head;
-        for (; e && (e->object () != obj); e = e->next ());
+        for (; e && ( e->object ( ) != obj ); e = e->next ( ) );
         return e;
     }
 
 protected:
 
-    bool last () const {
-        return (_size == 1);
+    bool last ( ) const {
+        return (_size == 1 );
     }
 
-    void insert (Element * e, Element * p, Element * n) {
-        db<Lists>(TRC) << "List::insert(e=" << e << ",p=" << p << ",n=" << n
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
-                << "},{p=" << (p ? p->prev () : (void *) - 1)
-                << ",o=" << (p ? p->object () : (void *) - 1)
-                << ",n=" << (p ? p->next () : (void *) - 1)
-                << "},{p=" << (n ? n->prev () : (void *) - 1)
-                << ",o=" << (n ? n->object () : (void *) - 1)
-                << ",n=" << (n ? n->next () : (void *) - 1)
+    void insert ( Element * e, Element * p, Element * n ) {
+        db<Lists>( TRC ) << "List::insert(e=" << e << ",p=" << p << ",n=" << n
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
+                << "},{p=" << ( p ? p->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( p ? p->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( p ? p->next ( ) : ( void * ) - 1 )
+                << "},{p=" << ( n ? n->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( n ? n->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( n ? n->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        p->next (e);
-        n->prev (e);
-        e->prev (p);
-        e->next (n);
+        p->next ( e );
+        n->prev ( e );
+        e->prev ( p );
+        e->next ( n );
         _size++;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
     }
 
-    void insert_first (Element * e) {
-        db<Lists>(TRC) << "List::insert_first(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    void insert_first ( Element * e ) {
+        db<Lists>( TRC ) << "List::insert_first(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
-        e->prev (0);
-        e->next (0);
+        e->prev ( 0 );
+        e->next ( 0 );
         _head = e;
         _tail = e;
         _size++;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
     }
 
-    Element * remove_last () {
-        db<Lists>(TRC) << "List::remove_last()" << endl;
+    Element * remove_last ( ) {
+        db<Lists>( TRC ) << "List::remove_last()" << endl;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
         Element * e = _head;
         _head = 0;
         _tail = 0;
         _size--;
 
-        print_head ();
-        print_tail ();
+        print_head ( );
+        print_tail ( );
 
         return e;
     }
 
-    void print_head () {
-        db<Lists>(INF) << "List[" << this << "]::head=" << head ()
-                << " => {p=" << (head () ? head ()->prev () : (void *) - 1)
-                << ",o=" << (head () ? head ()->object () : (void *) - 1)
-                << ",n=" << (head () ? head ()->next () : (void *) - 1)
+    void print_head ( ) {
+        db<Lists>( INF ) << "List[" << this << "]::head=" << head ( )
+                << " => {p=" << ( head ( ) ? head ( )->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( head ( ) ? head ( )->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( head ( ) ? head ( )->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
     }
 
-    void print_tail () {
-        db<Lists>(INF) << "List[" << this << "]::tail=" << tail ()
-                << " => {p=" << (tail () ? tail ()->prev () : (void *) - 1)
-                << ",o=" << (tail () ? tail ()->object () : (void *) - 1)
-                << ",n=" << (tail () ? tail ()->next () : (void *) - 1)
+    void print_tail ( ) {
+        db<Lists>( INF ) << "List[" << this << "]::tail=" << tail ( )
+                << " => {p=" << ( tail ( ) ? tail ( )->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( tail ( ) ? tail ( )->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( tail ( ) ? tail ( )->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
     }
 
@@ -1186,82 +1186,82 @@ public:
     using Base::insert_tail;
     using Base::search;
 
-    void insert (Element * e) {
-        db<Lists>(TRC) << "Ordered_List::insert(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    void insert ( Element * e ) {
+        db<Lists>( TRC ) << "Ordered_List::insert(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        if (empty ())
-            insert_first (e);
+        if ( empty ( ) )
+            insert_first ( e );
         else {
             Element * next;
-            for (next = head ();
-                    (next->rank () <= e->rank ()) && next->next ();
-                    next = next->next ())
-                if (relative)
-                    e->rank (e->rank () - next->rank ());
-            if (next->rank () <= e->rank ()) {
-                if (relative)
-                    e->rank (e->rank () - next->rank ());
-                insert_tail (e);
-            } else if (!next->prev ()) {
-                if (relative)
-                    next->rank (next->rank () - e->rank ());
-                insert_head (e);
+            for ( next = head ( );
+                    ( next->rank ( ) <= e->rank ( ) ) && next->next ( );
+                    next = next->next ( ) )
+                if ( relative )
+                    e->rank ( e->rank ( ) - next->rank ( ) );
+            if ( next->rank ( ) <= e->rank ( ) ) {
+                if ( relative )
+                    e->rank ( e->rank ( ) - next->rank ( ) );
+                insert_tail ( e );
+            } else if ( !next->prev ( ) ) {
+                if ( relative )
+                    next->rank ( next->rank ( ) - e->rank ( ) );
+                insert_head ( e );
             } else {
-                if (relative)
-                    next->rank (next->rank () - e->rank ());
-                Base::insert (e, next->prev (), next);
+                if ( relative )
+                    next->rank ( next->rank ( ) - e->rank ( ) );
+                Base::insert ( e, next->prev ( ), next );
             }
         }
     }
 
-    Element * remove () {
-        db<Lists>(TRC) << "Ordered_List::remove()" << endl;
-        Element * e = Base::remove_head ();
-        if (e && relative && e->next ())
-            e->next ()->rank (e->next ()->rank () + e->rank ());
+    Element * remove ( ) {
+        db<Lists>( TRC ) << "Ordered_List::remove()" << endl;
+        Element * e = Base::remove_head ( );
+        if ( e && relative && e->next ( ) )
+            e->next ( )->rank ( e->next ( )->rank ( ) + e->rank ( ) );
         return e;
     }
 
-    Element * remove (Element * e) {
-        db<Lists>(TRC) << "Ordered_List::remove(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    Element * remove ( Element * e ) {
+        db<Lists>( TRC ) << "Ordered_List::remove(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        Base::remove (e);
-        if (relative && e->next ())
-            e->next ()->rank (e->next ()->rank () + e->rank ());
+        Base::remove ( e );
+        if ( relative && e->next ( ) )
+            e->next ( )->rank ( e->next ( )->rank ( ) + e->rank ( ) );
 
         return e;
     }
 
-    Element * remove (const Object_Type * obj) {
-        db<Lists>(TRC) << "Ordered_List::remove(o=" << obj << ")" << endl;
+    Element * remove ( const Object_Type * obj ) {
+        db<Lists>( TRC ) << "Ordered_List::remove(o=" << obj << ")" << endl;
 
-        Element * e = search (obj);
-        if (e)
-            return remove (e);
+        Element * e = search ( obj );
+        if ( e )
+            return remove ( e );
         else
             return 0;
     }
 
-    Element * search_rank (const Rank_Type & rank) {
-        Element * e = head ();
-        for (; e && (e->rank () != rank); e = e->next ());
+    Element * search_rank ( const Rank_Type & rank ) {
+        Element * e = head ( );
+        for (; e && ( e->rank ( ) != rank ); e = e->next ( ) );
         return e;
     }
 
-    Element * remove_rank (const Rank_Type & rank) {
-        db<Lists>(TRC) << "Ordered_List::remove_rank(r=" << rank << ")" << endl;
+    Element * remove_rank ( const Rank_Type & rank ) {
+        db<Lists>( TRC ) << "Ordered_List::remove_rank(r=" << rank << ")" << endl;
 
-        Element * e = search_rank (rank);
-        if (e)
-            return remove (e);
+        Element * e = search_rank ( rank );
+        if ( e )
+            return remove ( e );
         return 0;
     }
 };
@@ -1299,7 +1299,7 @@ public:
 
 public:
 
-    Scheduling_List () : _chosen (0) { }
+    Scheduling_List ( ) : _chosen ( 0 ) { }
 
     using Base::empty;
     using Base::size;
@@ -1308,71 +1308,71 @@ public:
     using Base::begin;
     using Base::end;
 
-    Element * volatile & chosen () {
+    Element * volatile & chosen ( ) {
         return _chosen;
     }
 
-    void insert (Element * e) {
-        db<Lists>(TRC) << "Scheduling_List::insert(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    void insert ( Element * e ) {
+        db<Lists>( TRC ) << "Scheduling_List::insert(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        if (_chosen)
-            Base::insert (e);
+        if ( _chosen )
+            Base::insert ( e );
         else
             _chosen = e;
     }
 
-    Element * remove (Element * e) {
-        db<Lists>(TRC) << "Scheduling_List::remove(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    Element * remove ( Element * e ) {
+        db<Lists>( TRC ) << "Scheduling_List::remove(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        if (e == _chosen)
-            _chosen = Base::remove_head ();
+        if ( e == _chosen )
+            _chosen = Base::remove_head ( );
         else
-            e = Base::remove (e);
+            e = Base::remove ( e );
 
         return e;
     }
 
-    Element * choose () {
-        db<Lists>(TRC) << "Scheduling_List::choose()" << endl;
+    Element * choose ( ) {
+        db<Lists>( TRC ) << "Scheduling_List::choose()" << endl;
 
-        if (!empty ()) {
-            Base::insert (_chosen);
-            _chosen = Base::remove_head ();
+        if ( !empty ( ) ) {
+            Base::insert ( _chosen );
+            _chosen = Base::remove_head ( );
         }
 
         return _chosen;
     }
 
-    Element * choose_another () {
-        db<Lists>(TRC) << "Scheduling_List::choose_another()" << endl;
+    Element * choose_another ( ) {
+        db<Lists>( TRC ) << "Scheduling_List::choose_another()" << endl;
 
-        if (!empty () && head ()->rank () != R::IDLE) {
+        if ( !empty ( ) && head ( )->rank ( ) != R::IDLE ) {
             Element * tmp = _chosen;
-            _chosen = Base::remove_head ();
-            Base::insert (tmp);
+            _chosen = Base::remove_head ( );
+            Base::insert ( tmp );
         }
 
         return _chosen;
     }
 
-    Element * choose (Element * e) {
-        db<Lists>(TRC) << "Scheduling_List::choose(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    Element * choose ( Element * e ) {
+        db<Lists>( TRC ) << "Scheduling_List::choose(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        if (e != _chosen) {
-            Base::insert (_chosen);
-            _chosen = Base::remove (e);
+        if ( e != _chosen ) {
+            Base::insert ( _chosen );
+            _chosen = Base::remove ( e );
         }
 
         return _chosen;
@@ -1406,8 +1406,8 @@ public:
 
 public:
 
-    Multihead_Scheduling_List () {
-        for (unsigned int i = 0; i < H; i++)
+    Multihead_Scheduling_List ( ) {
+        for ( unsigned int i = 0; i < H; i++ )
             _chosen[i] = 0;
     }
 
@@ -1418,78 +1418,78 @@ public:
     using Base::begin;
     using Base::end;
 
-    Element * volatile & chosen () {
-        return _chosen[R::current_head ()];
+    Element * volatile & chosen ( ) {
+        return _chosen[R::current_head ( )];
     }
 
-    void insert (Element * e) {
-        db<Lists>(TRC) << "Scheduling_List::insert(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    void insert ( Element * e ) {
+        db<Lists>( TRC ) << "Scheduling_List::insert(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        if (_chosen[R::current_head ()])
-            Base::insert (e);
+        if ( _chosen[R::current_head ( )] )
+            Base::insert ( e );
         else
-            _chosen[R::current_head ()] = e;
+            _chosen[R::current_head ( )] = e;
     }
 
-    Element * remove (Element * e) {
-        db<Lists>(TRC) << "Scheduling_List::remove(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    Element * remove ( Element * e ) {
+        db<Lists>( TRC ) << "Scheduling_List::remove(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
         //        unsigned int i = 0;
         //        for(; (i < H) && _chosen[i] != e; i++);
         //        if(i != H)
         //            _chosen[i] = Base::remove_head();
-        if (e == _chosen[R::current_head ()])
-            _chosen[R::current_head ()] = Base::remove_head ();
+        if ( e == _chosen[R::current_head ( )] )
+            _chosen[R::current_head ( )] = Base::remove_head ( );
         else
-            e = Base::remove (e);
+            e = Base::remove ( e );
 
         return e;
     }
 
-    Element * choose () {
-        db<Lists>(TRC) << "Scheduling_List::choose()" << endl;
+    Element * choose ( ) {
+        db<Lists>( TRC ) << "Scheduling_List::choose()" << endl;
 
-        if (!empty ()) {
-            Base::insert (_chosen[R::current_head ()]);
-            _chosen[R::current_head ()] = Base::remove_head ();
+        if ( !empty ( ) ) {
+            Base::insert ( _chosen[R::current_head ( )] );
+            _chosen[R::current_head ( )] = Base::remove_head ( );
         }
 
-        return _chosen[R::current_head ()];
+        return _chosen[R::current_head ( )];
     }
 
-    Element * choose_another () {
-        db<Lists>(TRC) << "Scheduling_List::choose_another()" << endl;
+    Element * choose_another ( ) {
+        db<Lists>( TRC ) << "Scheduling_List::choose_another()" << endl;
 
-        if (!empty () && head ()->rank () != R::IDLE) {
-            Element * tmp = _chosen[R::current_head ()];
-            _chosen[R::current_head ()] = Base::remove_head ();
-            Base::insert (tmp);
+        if ( !empty ( ) && head ( )->rank ( ) != R::IDLE ) {
+            Element * tmp = _chosen[R::current_head ( )];
+            _chosen[R::current_head ( )] = Base::remove_head ( );
+            Base::insert ( tmp );
         }
 
-        return _chosen[R::current_head ()];
+        return _chosen[R::current_head ( )];
     }
 
-    Element * choose (Element * e) {
-        db<Lists>(TRC) << "Scheduling_List::choose(e=" << e
-                << ") => {p=" << (e ? e->prev () : (void *) - 1)
-                << ",o=" << (e ? e->object () : (void *) - 1)
-                << ",n=" << (e ? e->next () : (void *) - 1)
+    Element * choose ( Element * e ) {
+        db<Lists>( TRC ) << "Scheduling_List::choose(e=" << e
+                << ") => {p=" << ( e ? e->prev ( ) : ( void * ) - 1 )
+                << ",o=" << ( e ? e->object ( ) : ( void * ) - 1 )
+                << ",n=" << ( e ? e->next ( ) : ( void * ) - 1 )
                 << "}" << endl;
 
-        if (e != _chosen[R::current_head ()]) {
-            Base::insert (_chosen[R::current_head ()]);
-            _chosen[R::current_head ()] = Base::remove (e);
+        if ( e != _chosen[R::current_head ( )] ) {
+            Base::insert ( _chosen[R::current_head ( )] );
+            _chosen[R::current_head ( )] = Base::remove ( e );
         }
 
-        return _chosen[R::current_head ()];
+        return _chosen[R::current_head ( )];
     }
 
 private:
@@ -1519,61 +1519,61 @@ public:
 
 public:
 
-    Scheduling_Multilist () { }
+    Scheduling_Multilist ( ) { }
 
-    bool empty () const {
-        return _list[R::current_queue ()].empty ();
+    bool empty ( ) const {
+        return _list[R::current_queue ( )].empty ( );
     }
 
-    unsigned int size () const {
-        return _list[R::current_queue ()].size ();
+    unsigned int size ( ) const {
+        return _list[R::current_queue ( )].size ( );
     }
 
-    unsigned int total_size () const {
+    unsigned int total_size ( ) const {
         unsigned int s = 0;
-        for (unsigned int i = 0; i < Q; i++)
-            s += _list[i].size ();
+        for ( unsigned int i = 0; i < Q; i++ )
+            s += _list[i].size ( );
         return s;
     }
 
-    Element * head () {
-        return _list[R::current_queue ()].head ();
+    Element * head ( ) {
+        return _list[R::current_queue ( )].head ( );
     }
 
-    Element * tail () {
-        return _list[R::current_queue ()].tail ();
+    Element * tail ( ) {
+        return _list[R::current_queue ( )].tail ( );
     }
 
-    Iterator begin () {
-        return Iterator (_list[R::current_queue ()].head ());
+    Iterator begin ( ) {
+        return Iterator ( _list[R::current_queue ( )].head ( ) );
     }
 
-    Iterator end () {
-        return Iterator (0);
+    Iterator end ( ) {
+        return Iterator ( 0 );
     }
 
-    Element * volatile & chosen () {
-        return _list[R::current_queue ()].chosen ();
+    Element * volatile & chosen ( ) {
+        return _list[R::current_queue ( )].chosen ( );
     }
 
-    void insert (Element * e) {
-        _list[e->rank ().queue ()].insert (e);
+    void insert ( Element * e ) {
+        _list[e->rank ( ).queue ( )].insert ( e );
     }
 
-    Element * remove (Element * e) {
-        return _list[e->rank ().queue ()].remove (e);
+    Element * remove ( Element * e ) {
+        return _list[e->rank ( ).queue ( )].remove ( e );
     }
 
-    Element * choose () {
-        return _list[R::current_queue ()].choose ();
+    Element * choose ( ) {
+        return _list[R::current_queue ( )].choose ( );
     }
 
-    Element * choose_another () {
-        return _list[R::current_queue ()].choose_another ();
+    Element * choose_another ( ) {
+        return _list[R::current_queue ( )].choose_another ( );
     }
 
-    Element * choose (Element * e) {
-        return _list[e->rank ().queue ()].choose (e);
+    Element * choose ( Element * e ) {
+        return _list[e->rank ( ).queue ( )].choose ( e );
     }
 
 private:
@@ -1614,7 +1614,7 @@ public:
 
 public:
 
-    Grouping_List () : _grouped_size (0) { }
+    Grouping_List ( ) : _grouped_size ( 0 ) { }
 
     using Base::empty;
     using Base::size;
@@ -1628,51 +1628,51 @@ public:
     using Base::print_head;
     using Base::print_tail;
 
-    unsigned int grouped_size () const {
+    unsigned int grouped_size ( ) const {
         return _grouped_size;
     }
 
-    Element * search_size (unsigned int s) {
-        Element * e = head ();
-        if (sizeof (Object_Type) < sizeof (Element))
-            for (; e && (e->size () < sizeof (Element) / sizeof (Object_Type) + s) && (e->size () != s); e = e->next ());
+    Element * search_size ( unsigned int s ) {
+        Element * e = head ( );
+        if ( sizeof (Object_Type ) < sizeof (Element ) )
+            for (; e && ( e->size ( ) < sizeof (Element ) / sizeof (Object_Type ) + s ) && ( e->size ( ) != s ); e = e->next ( ) );
         else
-            for (; e && (e->size () < s); e = e->next ());
+            for (; e && ( e->size ( ) < s ); e = e->next ( ) );
         return e;
     }
 
-    void insert_merging (Element * e, Element ** m1, Element ** m2) {
-        db<Lists>(TRC) << "Grouping_List::insert_merging(e=" << e << ")" << endl;
+    void insert_merging ( Element * e, Element ** m1, Element ** m2 ) {
+        db<Lists>( TRC ) << "Grouping_List::insert_merging(e=" << e << ")" << endl;
 
-        _grouped_size += e->size ();
+        _grouped_size += e->size ( );
         *m1 = *m2 = 0;
-        Element * r = search (e->object () + e->size ());
-        Element * l = search_left (e->object ());
-        if (!l) {
-            insert_tail (e);
+        Element * r = search ( e->object ( ) + e->size ( ) );
+        Element * l = search_left ( e->object ( ) );
+        if ( !l ) {
+            insert_tail ( e );
         }
-        if (r) {
-            e->size (e->size () + r->size ());
-            remove (r);
+        if ( r ) {
+            e->size ( e->size ( ) + r->size ( ) );
+            remove ( r );
             *m1 = r;
         }
-        if (l) {
-            l->size (l->size () + e->size ());
+        if ( l ) {
+            l->size ( l->size ( ) + e->size ( ) );
             *m2 = e;
         }
     }
 
-    Element * search_decrementing (unsigned int s) {
-        db<Lists>(TRC) << "Grouping_List::search_decrementing(s=" << s << ")" << endl;
-        print_head ();
-        print_tail ();
+    Element * search_decrementing ( unsigned int s ) {
+        db<Lists>( TRC ) << "Grouping_List::search_decrementing(s=" << s << ")" << endl;
+        print_head ( );
+        print_tail ( );
 
-        Element * e = search_size (s);
-        if (e) {
-            e->shrink (s);
+        Element * e = search_size ( s );
+        if ( e ) {
+            e->shrink ( s );
             _grouped_size -= s;
-            if (!e->size ())
-                remove (e);
+            if ( !e->size ( ) )
+                remove ( e );
         }
 
         return e;
@@ -1680,9 +1680,9 @@ public:
 
 private:
 
-    Element * search_left (const Object_Type * obj) {
-        Element * e = head ();
-        for (; e && (e->object () + e->size () != obj); e = e->next ());
+    Element * search_left ( const Object_Type * obj ) {
+        Element * e = head ( );
+        for (; e && ( e->object ( ) + e->size ( ) != obj ); e = e->next ( ) );
         return e;
     }
 

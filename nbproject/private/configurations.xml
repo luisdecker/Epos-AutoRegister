@@ -112,6 +112,9 @@
           <in>outlet_b0.cc</in>
           <in>outlet_b1.cc</in>
         </df>
+        <df name="so2">
+          <in>objects.h</in>
+        </df>
         <df name="SSB">
           <in>gateway_ssb.cc</in>
           <in>gateway_ssb_traits.h</in>
@@ -486,46 +489,6 @@
           <in>stub.h</in>
         </df>
         <df name="iot">
-          <df name="utilities">
-            <df name="epos">
-              <in>chronometer.cc</in>
-              <in>condition.cc</in>
-              <in>iterator.cc</in>
-              <in>list.cc</in>
-              <in>mutex.cc</in>
-              <in>queue.cc</in>
-              <in>sleep.cc</in>
-            </df>
-            <df name="libc">
-              <in>chronometer.cc</in>
-              <in>condition.cc</in>
-              <in>iterator.cc</in>
-              <in>list.cc</in>
-              <in>mutex.cc</in>
-              <in>queue.cc</in>
-              <in>sleep.cc</in>
-            </df>
-            <in>chronometer.h</in>
-            <in>chronometer_app.cc</in>
-            <in>condition.h</in>
-            <in>condition_app.cc</in>
-            <in>condition_test.cc</in>
-            <in>function.cc</in>
-            <in>function.h</in>
-            <in>iterator.h</in>
-            <in>list.h</in>
-            <in>list_app.cc</in>
-            <in>list_test.cc</in>
-            <in>mutex.h</in>
-            <in>mutex_app.cc</in>
-            <in>mutex_test.cc</in>
-            <in>queue.h</in>
-            <in>queue_app.cc</in>
-            <in>queue_test.cc</in>
-            <in>sleep.h</in>
-            <in>sleep_app.cc</in>
-            <in>sleep_test.cc</in>
-          </df>
           <in>objects.h</in>
         </df>
         <df name="machine">

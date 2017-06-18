@@ -11,12 +11,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/decker/Documents/SOII/TrabalhoFinal/app/testeIoT.cc</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/src/iot/objects.cc</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/exemplos/hello.cc</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/iot/objects.h</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/scheduler.h</file>
-            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/src/component/thread.cc</file>
             <file>file:/home/decker/Documents/SOII/TrabalhoFinal/include/utility/list.h</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/src/utility/string.cc</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/app/testeIoT_traits.h</file>
+            <file>file:/home/decker/Documents/SOII/TrabalhoFinal/app/so2/objects.h</file>
         </group>
     </open-files>
 </project-private>

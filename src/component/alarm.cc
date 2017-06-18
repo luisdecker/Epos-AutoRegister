@@ -13,14 +13,14 @@ Alarm::Queue Alarm::_request;
 
 
 // Methods
+
 Alarm::Alarm(const Microsecond & time, Handler * handler, int times)
-: _time(time), _handler(handler), _times(times), _ticks(ticks(time)), _link(this, _ticks)
-{
+: _time(time), _handler(handler), _times(times), _ticks(ticks(time)), _link(this, _ticks) {
     lock();
 
-    db<Alarm>(TRC) << "Alarm(t=" << time << ",tk=" << _ticks << ",h=" << reinterpret_cast<void *>(handler) << ",x=" << times << ") => " << this << endl;
+    db<Alarm>(TRC) << "Alarm(t=" << time << ",tk=" << _ticks << ",h=" << reinterpret_cast<void *> (handler) << ",x=" << times << ") => " << this << endl;
 
-    if(_ticks) {
+    if (_ticks) {
         _request.insert(&_link);
         unlock();
     } else {
@@ -29,9 +29,7 @@ Alarm::Alarm(const Microsecond & time, Handler * handler, int times)
     }
 }
 
-
-Alarm::~Alarm()
-{
+Alarm::~Alarm() {
     lock();
 
     db<Alarm>(TRC) << "~Alarm(this=" << this << ")" << endl;
@@ -41,8 +39,7 @@ Alarm::~Alarm()
     unlock();
 }
 
-void Alarm::period(const Microsecond & p)
-{
+void Alarm::period(const Microsecond & p) {
     lock();
 
     db<Alarm>(TRC) << "Alarm::period(this=" << this << ",p=" << p << ")" << endl;
@@ -57,8 +54,8 @@ void Alarm::period(const Microsecond & p)
 
 
 // Class methods
-void Alarm::delay(const Microsecond & time)
-{
+
+void Alarm::delay(const Microsecond & time) {
     db<Alarm>(TRC) << "Alarm::delay(time=" << time << ")" << endl;
 
     Semaphore semaphore(0);
@@ -67,14 +64,12 @@ void Alarm::delay(const Microsecond & time)
     semaphore.p();
 }
 
-
-void Alarm::handler(const IC::Interrupt_Id & i)
-{
+void Alarm::handler(const IC::Interrupt_Id & i) {
     lock();
 
     _elapsed++;
 
-    if(Traits<Alarm>::visible) {
+    if (Traits<Alarm>::visible) {
         Display display;
         int lin, col;
         display.position(&lin, &col);
@@ -85,15 +80,15 @@ void Alarm::handler(const IC::Interrupt_Id & i)
 
     Alarm * alarm = 0;
 
-    if(!_request.empty()) {
+    if (!_request.empty()) {
         // Replacing the following "if" by a "while" loop is tempting, but recovering the lock and dispatching the handler is
         // troublesome if the Alarm gets destroyed in between, like is the case for the idle thread returning to shutdown the machine
-        if(_request.head()->promote() <= 0) { // rank can be negative whenever multiple handlers get created for the same time tick
+        if (_request.head()->promote() <= 0) { // rank can be negative whenever multiple handlers get created for the same time tick
             Queue::Element * e = _request.remove();
             alarm = e->object();
-            if(alarm->_times != INFINITE)
+            if (alarm->_times != INFINITE)
                 alarm->_times--;
-            if(alarm->_times) {
+            if (alarm->_times) {
                 e->rank(alarm->_ticks);
                 _request.insert(e);
             }
@@ -102,8 +97,8 @@ void Alarm::handler(const IC::Interrupt_Id & i)
 
     unlock();
 
-    if(alarm) {
-        db<Alarm>(TRC) << "Alarm::handler(this=" << alarm << ",e=" << _elapsed << ",h=" << reinterpret_cast<void*>(alarm->handler) << ")" << endl;
+    if (alarm) {
+        db<Alarm>(TRC) << "Alarm::handler(this=" << alarm << ",e=" << _elapsed << ",h=" << reinterpret_cast<void*> (alarm->handler) << ")" << endl;
         (*alarm->_handler)();
     }
 }

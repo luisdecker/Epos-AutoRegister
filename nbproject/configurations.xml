@@ -710,8 +710,8 @@
       <makefileType>
         <makeTool>
           <buildCommandWorkingDir>.</buildCommandWorkingDir>
-          <buildCommand>${MAKE} APPLICATION=testeIoT flash</buildCommand>
-          <cleanCommand>${MAKE} -f makefile clean</cleanCommand>
+          <buildCommand>${MAKE} APPLICATION=testeIoT </buildCommand>
+          <cleanCommand>${MAKE} veryclean</cleanCommand>
           <executablePath></executablePath>
           <cTool>
             <incDir>
@@ -719,6 +719,7 @@
             </incDir>
           </cTool>
           <ccTool>
+            <standard>8</standard>
             <incDir>
               <pElem>include</pElem>
             </incDir>

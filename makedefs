@@ -22,6 +22,7 @@ LMACHNAME	:= mach
 LSYSNAME	:= sys
 LINITNAME	:= init
 LUTILNAME	:= util
+LIOTNAME    := iot
 
 # Makefile hacks
 APPLICATIONS	:= $(subst .cc,,$(shell find $(APP) -name \*.cc -printf "%f\n"))
@@ -70,11 +71,13 @@ LIBMACH		= $(LIB)/lib$(LMACHNAME)_$(ARCH).a
 LIBSYS		= $(LIB)/lib$(LSYSNAME)_$(ARCH).a
 LIBINIT		= $(LIB)/lib$(LINITNAME)_$(ARCH).a
 LIBUTIL		= $(LIB)/lib$(LUTILNAME)_$(ARCH).a
+LIBIOT      = $(LIB)/lib$(LIOTNAME)_$(ARCH).a
 LARCH		= $(LARCHNAME)_$(ARCH)
 LMACH		= $(LMACHNAME)_$(ARCH)
 LSYS		= $(LSYSNAME)_$(ARCH)
 LINIT		= $(LINITNAME)_$(ARCH)
 LUTIL		= $(LUTILNAME)_$(ARCH)
+LIOT        = $(LIOTNAME)_$(ARCH)
 
 # Compiler prefixes
 ia32_COMP_PREFIX	:= /usr/local/ia32/gcc-4.4.4/bin/ia32-
@@ -171,10 +174,10 @@ TLD		:= gcc
 TLDFLAGS	:= -m32
 
 # Tools and flags to compile applications
-ACC		= $(BIN)/eposcc $(MACH_CC_FLAGS) -c -ansi -O2
+ACC		    = $(BIN)/eposcc $(MACH_CC_FLAGS) -c -ansi -O2
 ACXX		= $(BIN)/eposcc $(MACH_CC_FLAGS) -c -ansi -O2
 AF77		= $(BIN)/eposcc $(MACH_CC_FLAGS) -c -ansi -O2
-ALD		= $(BIN)/eposcc --$(MODE)
+ALD		    = $(BIN)/eposcc --$(MODE)
 ALDFLAGS	:= --gc-sections $(if $(MACH_FLASHER),--omagic,--nmagic)
 
 # Tools and flags to compile the system
